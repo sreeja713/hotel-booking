@@ -1,0 +1,56 @@
+table,
+th,
+td {
+    border: 1px solid rgb(87, 86, 86);
+    text-align: center;
+}
+
+.full-div {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    padding: 30px 10px;
+    margin-top: 50px;
+}
+th {
+    padding: 15px;
+    /* background-color: #a1b8a19c; */
+    font-size: large;
+}
+
+td {
+    padding: 10px;
+}
+
+    body {
+        counter-reset: Serial;
+        /* Set the Serial counter to 0 */
+    }
+    
+    
+    
+    tr td:first-child:before {
+        counter-increment: Serial;
+        /* Increment the Serial counter */
+        content: "" counter(Serial);
+        /* Display the counter */
+    }
+
+.icon{
+    font-size: 45px;
+    background-color:none;
+    color: white;
+}
+.home-content-div{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.services-div{
+    background-color: #ffc107b5 !important;
+}
+.book_now_div{
+    background-image: url('{% static "images/bookit.jpg" %}');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    
+    height: 750px;
+}

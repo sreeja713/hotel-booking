@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="container mt-5 pt-5 shadow-lg order-review-wrapper">
+   <div  class="container mt-5">
+       <div class="row text-center w-75 m-auto">
+           <div class="col-12">
+                {% for message in messages %}
+                <div class="container text-center alert-success p-0">
+                    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="True">&times;</span>
+                        </button>
+                        {{ message }}
+                    </div>
+                </div>
+                {% endfor %}
+           </div>
+       </div>
+       <div class="row heading_row">
+           <div class="col-12 text-center">
+               <h4>Order Review</h4>
+           </div>
+       </div>
+   
+       <div class="row pt-5 pb-5 ">
+
+            <div class="col-6">
+                <div class="order-det-block border-right">
+                    
+                    <div class="d-block ind-review-item">
+                        <span>User : </span>
+                        <span>{{order_details.user_id}}</span>
+                    </div>
+
+                    <div class="d-block ind-review-item">
+                        <span>Start Date : </span>
+                        <span>{{booking_det.starting_date}}</span>
+                    </div>
+                    <div class="d-block ind-review-item">
+                        <span>End Date : </span>
+                        <span>{{booking_det.ending_Date}}</span>
+                    </div>
+                    <div class="d-block ind-review-item">
+                        <span>Maximum Occupants : </span>
+                        <span>{{booking_det.room_number.subcategory.capacit}}</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-6">
+                <div class="order-det-block">
+                    <div class="d-block ind-review-item">
+                        <span>Order Date : </span>
+                        <span>{{order_details.order_date}}</span>
+                    </div>
+            
+                    <div class="d-block ind-review-item">
+                        <span>Payment Mode: </span>
+                        <span>Offline</span>
+                    </div>
+                    <div class="d-block ind-review-item">
+                        <span>Total Price: </span>
+                        <span>Rs. {{order_details.order_total}}</span>
+                    </div>
+                </div>
+            </div>
+
+
+       </div>
+
+       <div class="row">
+        <table style="width:100%">
+            <thead>
+                <th>Sl.No</th>
+                <th>Room No</th>
+                <th>Category</th>
+                <th>Type</th>
+                <th>Price</th>
+        
+            </thead>
+            {% for item in lineitems %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{item.room_numb.room_number}}</td>
+                <td>{{item.room_numb.caregory.name}}</td>
+                <td>{{item.room_numb.subcategory.name}}</td>
+                <td>Rs. {{item.room_numb.price}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+       </div>
+       
+       <div class="float-right">
+        <a class="btn btn-primary pt-2 pb-2 pl-4 pr-4 mr-5 mt-5" href="{% url 'booking_completed' order_details.id %}">Confirm</a>
+       </div>
+   </div>
+</div>
+{% endblock %}

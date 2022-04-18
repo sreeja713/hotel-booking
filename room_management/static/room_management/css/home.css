@@ -1,0 +1,130 @@
+table,
+th,
+td {
+    border: 1px solid rgb(87, 86, 86);
+    text-align: center;
+}
+
+.full-div {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    padding: 30px 10px;
+    margin-top: 50px;
+    min-height: 600px;
+    margin-bottom: 60px;
+}
+th {
+    padding: 15px;
+    /* background-color: #a1b8a19c; */
+    font-size: large;
+}
+
+td {
+    padding: 10px;
+}
+
+.icon{
+    font-size: 45px;
+    background-color:none;
+    color: white;
+}
+.home-content-div{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.services-div{
+    background-color: #ffc107b5 !important;
+}
+.book_now_div{
+    background-image: url('/static/room_management/images/bookit.jpg');
+    background-repeat: no-repeat;
+   
+    width: 100%;
+    background-size: cover;
+}
+.book_now_div a:hover{
+    background-color: #17a2b8;
+}
+.clients-div {
+    background-image: url('/static/room_management/images/bookit.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 100%;
+    
+}
+.photo{
+    border: 1px black solid;
+    border-radius: 100%;
+}
+
+.business-stats {
+    display: block;
+    width: 140px;
+    height: 140px;
+    font-size: 24px;
+    line-height: 140px;
+    border: 4px solid #F6CC07;
+    border-radius: 100px;
+    color: #000;
+    margin: 20px auto;
+}
+
+
+.business-stats-label {
+    display: block;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+.footer-div {
+    height: 75px;
+    color: #fff;
+    
+} 
+
+
+.footer-div ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 -7.5px;
+}
+
+.footer-div ul>li {
+    display: inline-block;
+    padding: 3px 0;
+    width: 31px;
+    text-align: center;
+}
+
+.footer-div a {
+    color: #fff;
+}
+
+.order-review-wrapper {
+    padding-bottom: 150px;
+}
+.success-tips{
+    color: #129b76;
+}
+
+.success-meesage-border{
+    border-color: #129b76;
+}
+@media screen and (max-width:850px) {
+    .carosel-div img {
+
+        height: 400px;
+    }
+
+    table,
+    th,
+    td {
+
+        text-align: center;
+        padding: 1px;
+        font-size: 8px;
+    }
+    
+        
+    }
+

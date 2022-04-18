@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% load extra %}
+
+<div class="container full-div">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h3>
+                Room  Details</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            {% for message in messages %}
+            <div class="container text-center alert-success p-0">
+                <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="True">&times;</span>
+                    </button>
+                    {{ message }}
+                </div>
+            </div>
+            {% endfor %}
+            <div class="row addnew pb-3 pr-5">
+                <div class="col-12 text-right">
+                    <a href="{% url 'addroom' %}" class="px-3 py-2 bg-info text-light">Add New</a>
+                </div>
+            </div>
+            <div class="table-div col-12 pb-5">
+                <table style="width:100%">
+
+
+                    <tr>
+                        <th>Sl.No</th>
+                        <th>ID</th>
+
+                        <th>Room Number</th>
+
+                       
+                        <th>Price</th>
+                        
+                        <th>Category</th>
+                        <th>Type</th>
+                        <th>occupaid</th>
+                        <th>Action</th>
+
+
+                        {% for room in rooms %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{room.id}}</td>
+
+                        <td>{{room.room_number}}</td>
+
+
+                       
+                        <td>{{ room.price}}</td>
+                        
+                        <td>{{ room.caregory}}</td>
+                        <td>{{ room.subcategory}}</td>
+                 
+                        
+                      
+
+
+                        <td>{{ room.occupaid|occupaid_status}}</td>
+                        <td>
+                            <a href="{% url 'room_delete' room.id %}" class="text-danger">Delete</a>
+                        </td>
+
+
+
+
+
+
+
+                    </tr>
+                    {% endfor %}
+
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{% include 'footer.html' %}
+{% endblock %}

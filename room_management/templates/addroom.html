@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+{% load crispy_forms_filters %}
+<div class="container body-div mt-5 pt-5">
+    <div class="row mt-5 w-75 m-auto border shadow">
+        <div class="col-12 col-md-7 pt-5 pb-5 m-auto ">
+            <div class="row heading_div pb-4 text-center">
+                <div class="col-12">
+                    <h3>Add Rooms</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 m-auto">
+                    <form method="POST" enctype=multipart/form-data>
+                        {% csrf_token %}
+                        {{form | crispy}}
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <input type="submit" value="Create Room" class="py-1 px-2">
+                            </div>
+                        </div>
+                    
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}
